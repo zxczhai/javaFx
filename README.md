@@ -5,11 +5,11 @@
 
 ## Getting Started ##
 
-使用MYSQL 命令行工具或者Navicat 导入项目中
+使用MYSQL 命令行工具或者Navicat 导入项目中路径为
 ```
 src\helloFx\SQL\helloFx.sql
 ```
-文件以创建适用于本项目的数据库.
+的文件以创建适用于本项目的数据库.
 
 更改相同目录下db.properties中userName和userPwd为你自己所设置的值.
 
