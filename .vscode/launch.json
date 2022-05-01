@@ -1,0 +1,93 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Launch BookInfo",
+            "request": "launch",
+            "mainClass": "helloFx.TestDemo.BookInfo",
+            "projectName": "HelloFx_88492519"
+        },
+        {
+            "type": "java",
+            "name": "Launch UserInfo",
+            "request": "launch",
+            "mainClass": "helloFx.TestDemo.UserInfo",
+            "projectName": "HelloFx_88492519"
+        },
+        {
+            "type": "java",
+            "name": "Launch ChoiceBoxDemo",
+            "request": "launch",
+            "mainClass": "helloFx.ChoiceBoxDemo",
+            "projectName": "HelloFx_88492519"
+        },
+        {
+            "type": "java",
+            "name": "Launch demo",
+            "request": "launch",
+            "mainClass": "demo",
+            "projectName": "HelloFx_88492519"
+        },
+        {
+            "type": "java",
+            "name": "Launch Test14_1",
+            "request": "launch",
+            "mainClass": "helloFx.Test14_1",
+            "projectName": "HelloFx_88492519"
+        },
+        {
+            "type": "java",
+            "name": "Launch testConnect",
+            "request": "launch",
+            "mainClass": "helloFx.SQL.testConnect",
+            "projectName": "HelloFx_88492519"
+        },
+        {
+            "type": "java",
+            "name": "Launch WarnView",
+            "request": "launch",
+            "mainClass": "helloFx.UI.WarnView",
+            "projectName": "HelloFx_88492519"
+        },
+        {
+            "type": "java",
+            "name": "Launch test",
+            "request": "launch",
+            "mainClass": "helloFx.test",
+            "projectName": "HelloFx_88492519"
+        },
+        {
+            "type": "java",
+            "name": "Launch MainClass",
+            "request": "launch",
+            "mainClass": "helloFx.MainClass",
+            "projectName": "HelloFx_88492519"
+        },
+        {
+            "type": "java",
+            "name": "Launch StartVsShownJavaFXApp",
+            "request": "launch",
+            "mainClass": "helloFx.UI.StartVsShownJavaFXApp",
+            "projectName": "HelloFx_88492519"
+        },
+        {
+            "type": "java",
+            "name": "Launch StartVsShownJavaFXApp",
+            "request": "launch",
+            "mainClass": "helloFx.StartVsShownJavaFXApp",
+            "projectName": "HelloFx_88492519"
+        },
+        {
+            "type": "java",
+            "name": "Launch hello",
+            "request": "launch",
+            "mainClass": "helloFx.hello",
+            "projectName": "HelloFx_f332c146",
+            "vmArgs": "--module-path D:\\code\\Java\\openjfx-17.0.2_windows-x64_bin-sdk\\javafx-sdk-17.0.2\\lib --add-modules javafx.controls,javafx.fxml"
+        }
+    ]
+}
