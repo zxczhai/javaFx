@@ -37,7 +37,7 @@ public class LoginView {
     public LoginView() {
         root.setStyle("-fx-background-color:#008B8B");// error
         primaryStage.setScene(scene);
-        primaryStage.setTitle("hello world");
+        primaryStage.setTitle("Management System");
         primaryStage.setWidth(400);
         primaryStage.setHeight(300);
         primaryStage.setResizable(false);

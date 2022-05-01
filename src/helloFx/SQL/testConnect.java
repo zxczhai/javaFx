@@ -10,7 +10,7 @@ public class testConnect {
         try {
             Class.forName("com.mysql.jdbc.Driver");
             Connection con = DriverManager.getConnection(
-                    "jdbc:mysql://localhost:3306/bookmanagersystem?characterEncoding=latin1&useConfigs=maxPerformance",
+                    "jdbc:mysql://localhost:3306/bookmanagersystem?characterEncoding=utf8&useConfigs=maxPerformance",
                     "root", "2zhaizxc");
             // here sonoo is database name, root is username and password
             Statement stmt = con.createStatement();

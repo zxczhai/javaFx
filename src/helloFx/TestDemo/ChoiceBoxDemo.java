@@ -1,4 +1,4 @@
-package helloFx;
+package helloFx.TestDemo;
 
 import javafx.application.Application;
 import javafx.beans.value.*;

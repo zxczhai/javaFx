@@ -1,4 +1,4 @@
-package helloFx;
+package helloFx.TestDemo;
 
 import java.io.InputStream;
 import java.net.HttpURLConnection;
