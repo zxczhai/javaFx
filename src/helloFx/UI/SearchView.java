@@ -79,7 +79,7 @@ public class SearchView {
         Label sortLabel = new Label("Sort: ");
         sortLabel.setLayoutX(350);
         sortLabel.setLayoutY(100);
-        //分类选择ChoiceBos
+        // 分类选择ChoiceBos
         Vector<SortsBean> rBeans = new SortsDaoImp().selectSortsByInfo();
         ChoiceBox<String> sortBox = new ChoiceBox<String>();
         Enumeration<SortsBean> rSort = rBeans.elements();
@@ -93,7 +93,7 @@ public class SearchView {
         sortBox.setLayoutY(95);
         sortBox.setPrefWidth(130);
         // sortBox.setOnAction(e -> {
-        //     System.out.println(sortBox.getValue());
+        // System.out.println(sortBox.getValue());
         // });
 
         // 查询和购买按钮组件
@@ -128,7 +128,7 @@ public class SearchView {
 
     // 商品信息列表
     ObservableList<BookBeans> goodsSearchByInfo(String bookName, String booksort) {
-        Vector<BookBeans> bookBeans;
+        Vector<BookBeans> bookBeans = null;
         // System.out.println(booksort);
         // System.out.println(bookName);
         if (bookName == null && booksort == null) {
@@ -137,14 +137,15 @@ public class SearchView {
         } else {
             bookBeans = new SearchServiceImp().findBookInfo(bookName, booksort);
         }
-        if (bookBeans == null) {
-            new WarnView("goodsList is empty!");
-            return null;
-        }
+
         Enumeration<BookBeans> eBookBeans = bookBeans.elements();
         ObservableList<BookBeans> bookList = FXCollections.observableArrayList();
         while (eBookBeans.hasMoreElements()) {
             bookList.add(eBookBeans.nextElement());
+        }
+        if (bookList.size() == 0) {
+            new WarnView("goodsList is empty!");
+            return null;
         }
         return bookList;
     }
@@ -223,9 +224,9 @@ public class SearchView {
                     }
 
                 });
-        bookInfoView.getColumns().add(tc_bookAuthor);
         bookInfoView.getColumns().add(tc_bookId);
         bookInfoView.getColumns().add(tc_bookName);
+        bookInfoView.getColumns().add(tc_bookAuthor);
         bookInfoView.getColumns().add(tc_bookNum);
         bookInfoView.getColumns().add(tc_mainSort);
         bookInfoView.getColumns().add(tc_subSort);

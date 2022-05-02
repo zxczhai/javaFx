@@ -38,8 +38,9 @@ public class UserInfoDaoImp extends BaseDao implements UserInfoDao {
                 + "\"" + uInfoBean.getUserId() + "\");";
         this.con = Appstu.getConnection();
         try {
+            // System.out.println("actualName is "+uInfoBean.getActualName());
             this.state = this.con.createStatement();
-            state.executeUpdate(sql);
+            state.execute(sql);
             // System.out.println(sql);
         } catch (SQLException e) {
             e.printStackTrace();
@@ -52,7 +53,7 @@ public class UserInfoDaoImp extends BaseDao implements UserInfoDao {
 
     @Override
     public Boolean updateInfoBean(UserInfoBean uInfoBean) {
-        String sql = "update userinfo set location = ? ,sex =?,actualname =? where userid = ?";
+        String sql = "update userinfo set location = ? ,sex = ?,actualname = ? where userid = ?";
         this.con = Appstu.getConnection();
         try {
             this.preparedStatement = this.con.prepareStatement(sql);
@@ -60,7 +61,8 @@ public class UserInfoDaoImp extends BaseDao implements UserInfoDao {
             this.preparedStatement.setString(2, uInfoBean.getSex());
             this.preparedStatement.setString(3, uInfoBean.getActualName());
             this.preparedStatement.setString(4, String.valueOf(uInfoBean.getUserId()));
-            
+            this.preparedStatement.executeUpdate();
+            // System.out.println(uInfoBean.getLocation()+uInfoBean.getSex()+uInfoBean.getActualName()+String.valueOf(uInfoBean.getUserId()));
         } catch (SQLException e) {
             e.printStackTrace();
             return false;

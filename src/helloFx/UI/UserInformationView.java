@@ -1,7 +1,6 @@
 package helloFx.UI;
 
 import java.util.Enumeration;
-
 import helloFx.Beans.LocationBean;
 import helloFx.Beans.UserBean;
 import helloFx.Beans.UserInfoBean;
@@ -86,9 +85,9 @@ public class UserInformationView {
 
             @Override
             public void handle(ActionEvent event) {
-                if(confirmSuccess(checkInfo(uBean))){
-                primaryStage.close();
-                new SearchView(uBean);
+                if (confirmSuccess(checkInfo(uBean))) {
+                    primaryStage.close();
+                    new SearchView(uBean);
                 }
             }
 
@@ -123,18 +122,19 @@ public class UserInformationView {
             public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue) {
                 if (newValue.length() > 12)
                     acTextField.setText(oldValue);
-                // actualName = newValue;
+                actualName = newValue;
 
             }
 
         });
-       
+
         // 男女单选按钮
         ToggleGroup tg = new ToggleGroup();
         RadioButton rb_menButton = new RadioButton("男");
         RadioButton rb_womenButton = new RadioButton("女");
         if (checkInfo(uBean)) {
-            if (uInfoBean.getSex() == "男") {
+            // System.out.println(uInfoBean.getSex());
+            if (uInfoBean.getSex().equals("男")) {
                 rb_menButton.setSelected(true);
             } else {
                 rb_womenButton.setSelected(true);
@@ -175,8 +175,11 @@ public class UserInformationView {
                 UserInfoBean uInfoBean = new UserInfoBean(userLocation, userSex, actualName, userId);
                 new UserInfoDaoImp().storageInfoBean(uInfoBean);
             } else if (user_flag == true) {
-                new UserInfoUpdateServiceImp().updateInfoBy(userLocation, userSex, actualName, userId);
-                // System.out.println("update...");
+                if (new UserInfoUpdateServiceImp().updateInfoBy(userLocation, userSex, actualName, userId))
+                    return true;
+                else
+                    return false;
+                // new WarnView("update success...");
             }
             return true;
         } else {
