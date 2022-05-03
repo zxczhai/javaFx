@@ -1,5 +1,7 @@
 -- 创建本项目数据库
 create database bookmanagersystem;
+
+use bookmanagersystem;
 -- 创建关于用户账号密码的数据表
 create table UserManager(
     userId int not null auto_increment,
@@ -11,7 +13,7 @@ create table UserManager(
 insert into UserManager
 (userId,userName,userPwd)
 values
-("0","admin","12345789");
+("1","admin","12345789");
 -- 创建用户位置数据表
 create table location(
     city varchar(20)  primary key 
